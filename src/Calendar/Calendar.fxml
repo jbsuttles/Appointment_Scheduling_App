@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1200.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Calendar.CalendarController">
+   <children>
+      <Label layoutX="536.0" layoutY="14.0" text="Main Menu" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="appointmentTableView" layoutX="29.0" layoutY="124.0" prefHeight="403.0" prefWidth="1144.0">
+        <columns>
+          <TableColumn fx:id="apptIdCol" prefWidth="115.0" text="Appt. ID" />
+          <TableColumn fx:id="customerIdCol" prefWidth="129.0" text="Customer" />
+            <TableColumn fx:id="titleCol" prefWidth="129.0" text="Title" />
+            <TableColumn fx:id="descriptionCol" prefWidth="129.0" text="Description" />
+            <TableColumn fx:id="locationCol" prefWidth="129.0" text="Location" />
+            <TableColumn fx:id="typeCol" prefWidth="129.0" text="Type" />
+            <TableColumn fx:id="dateCol" prefWidth="129.0" text="Date" />
+            <TableColumn fx:id="startTimeCol" prefWidth="129.0" text="Start Time" />
+            <TableColumn fx:id="endTimeCol" prefWidth="129.0" text="End Time" />
+        </columns>
+      </TableView>
+      <HBox layoutX="130.0" layoutY="549.0" prefHeight="43.0" prefWidth="943.0" spacing="35.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#OnActionManageCustomers" prefWidth="161.0" text="Manage Customers" />
+            <Button mnemonicParsing="false" onAction="#OnActionAddAppt" prefWidth="161.0" text="Add Appointment" />
+            <Button mnemonicParsing="false" onAction="#OnActionUpdateAppt" text="Update Appointment" />
+            <Button mnemonicParsing="false" onAction="#onActionDeleteAppt" prefWidth="161.0" text="Delete Appointment" />
+            <Button mnemonicParsing="false" onAction="#OnActionDisplayReports" prefWidth="161.0" text="Reports" />
+         </children>
+      </HBox>
+      <Label layoutX="25.0" layoutY="76.0" text="Appointments" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <HBox layoutX="464.0" layoutY="80.0" prefHeight="27.0" prefWidth="471.0" spacing="25.0">
+         <children>
+            <RadioButton fx:id="viewCurrentWeek" mnemonicParsing="false" onAction="#onActionCurrentWeek" text="View Current Week" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="CalendarTG" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="viewCurrentMonth" mnemonicParsing="false" onAction="#onActionCurrentMonth" text="View Current Month" textFill="WHITE" toggleGroup="$CalendarTG">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="viewAll" mnemonicParsing="false" onAction="#OnActionViewAll" selected="true" text="View All" textFill="WHITE" toggleGroup="$CalendarTG">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </RadioButton>
+         </children>
+      </HBox>
+      <Button layoutX="25.0" layoutY="16.0" mnemonicParsing="false" onAction="#OnActionLogout" text="Logout" />
+      <DatePicker fx:id="DatePicker" editable="false" layoutX="955.0" layoutY="78.0" onAction="#OnActionSelectDate" />
+   </children>
+</AnchorPane>
