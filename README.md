@@ -7,3 +7,9 @@
  - Generate Reports
  - Warning at login if user has an appointment within 15 minutes of logging in
  - Login window and associated warnings displayed in Spanish if Operating System Language is set to Spanish
+
+Technologies Used:
+- Java
+- JavaFX
+- JDBC
+- MySQL
