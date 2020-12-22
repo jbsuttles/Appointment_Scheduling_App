@@ -1,6 +1,6 @@
 # Appointment_Scheduling_App
  The Appointment Scheduling App has the following features:
- - Calender that can filter appointments by Current Week, Current Month, or specific date from Date Picker
+ - Calendar that can filter appointments by Current Week, Current Month, or specific date from Date Picker
  - Add/Modify Customer
  - Add/Modify Appointment
  - Prevent User from being overbooked
